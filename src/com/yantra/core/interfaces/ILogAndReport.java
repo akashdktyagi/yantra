@@ -8,6 +8,8 @@ import org.apache.log4j.Logger;
 /**
  * @author akashtyagi
  * new version
+ * 
+ * new verison by Akash
  *
  */
 public interface ILogAndReport {
