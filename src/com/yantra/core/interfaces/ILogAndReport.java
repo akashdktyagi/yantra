@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 
 /**
  * @author akashtyagi
+ * new version
  *
  */
 public interface ILogAndReport {
