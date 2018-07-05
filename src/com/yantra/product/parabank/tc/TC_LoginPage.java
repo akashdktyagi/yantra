@@ -1,27 +1,70 @@
+/*
+ * @author: Akash
+ * Date: 7July2018
+ */
 package com.yantra.product.parabank.tc;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import java.io.IOException;
 import org.openqa.selenium.support.PageFactory;
-
+import com.yantra.core.managers.BrowserManager;
 import com.yantra.product.parabank.po.PO_LoginPage;
 
 public class TC_LoginPage {
-	public void t_01_validate_parabank_login(){
-		WebDriver driver;
-		System.setProperty("webdriver.chrome.driver", ".//chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
-		driver.get("http://parabank.parasoft.com/parabank/index.htm");
+	
+	/*
+	 * @author: Akash
+	 * Date: 7July2018
+	 * Description: Test Script to test successfull Login
+	 * Change History:
+	 * 
+	 */
+	public void t_01_validate_parabank_login() throws IOException{
 		
-		String var = "Akash";
+		//**********************************************************************************
+		//*************************Intialization********************************************
+		//**********************************************************************************
+		BrowserManager oBrowserManager = new BrowserManager();
+		WebDriver driver = oBrowserManager.GetBrowser("chrome");
+		
+		oBrowserManager.NavigateToPage(driver, "http://parabank.parasoft.com/parabank/index.htm");
 		
 		PO_LoginPage loginpage=PageFactory.initElements(driver,PO_LoginPage.class);
-		loginpage.SetUsername("john");
-		loginpage.SetPassword("demo");
-		loginpage.SetSubmit();
 		
+		//**********************************************************************************
+		//*************************TC Steps*************************************************
+		//**********************************************************************************
+		loginpage.kw_login_into_parabank("john","demo");
+			
 	}
+	
+	/*
+	 * @author: Akash
+	 * Date: 7July2018
+	 * Description: Test Script to test negative case for login right user name, wrong password
+	 * Change History:
+	 * 
+	 */
+	public void t_02_negative_enter_correct_user_name_wrong_password() {
+		try {
+			
+			//**********************************************************************************
+			//*************************Intialization********************************************
+			//**********************************************************************************
+			BrowserManager oBrowserManager = new BrowserManager();
+			WebDriver driver;	
+			driver = oBrowserManager.GetBrowser("chrome");
+			oBrowserManager.NavigateToPage(driver, "http://parabank.parasoft.com/parabank/index.htm");
+			PO_LoginPage loginpage=PageFactory.initElements(driver,PO_LoginPage.class);
+			
+			//**********************************************************************************
+			//*************************TC Steps*************************************************
+			//**********************************************************************************
+			loginpage.kw_login_into_parabank("john","wrong");
+			
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}//end method
 
-}
+}//end test class

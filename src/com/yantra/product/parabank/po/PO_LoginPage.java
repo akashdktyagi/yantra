@@ -18,18 +18,25 @@ public class PO_LoginPage {
 	 @FindBy(how=How.XPATH,using="//input[@class='button']")
 	private WebElement btn_Login;
 	 
-	 public void SetUsername(String Username) {
+	 private void SetUsername(String Username) {
 		 txtbx_UserName.sendKeys("john");
 	 }
-	 public void SetPassword(String password) 
+	 private void SetPassword(String password) 
 	 {txtbx_Password.sendKeys("demo");
 		 
 	 }
-	 public void SetSubmit()
+	 private void clickSubmit()
 	 {btn_Login.click();
 		 
 	 }
-	 public void POM(WebDriver d)
+	 
+	 public void kw_login_into_parabank(String u, String p) {
+		 SetUsername(u);
+		 SetPassword(p);
+		 clickSubmit();
+		 
+	 }
+	 public  PO_LoginPage(WebDriver d)
 	 {
 		 this.driver= d;
 	 }
