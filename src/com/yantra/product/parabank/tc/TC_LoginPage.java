@@ -65,6 +65,49 @@ public class TC_LoginPage {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}//end method
-
+	 
+	public void t_02_negative_enter_wrong_user_name_correct_password() {
+		try {
+			
+			//**********************************************************************************
+			//*************************Intialization********************************************
+			//**********************************************************************************
+			BrowserManager oBrowserManager = new BrowserManager();
+			WebDriver driver;	
+			driver = oBrowserManager.GetBrowser("chrome");
+			oBrowserManager.NavigateToPage(driver, "http://parabank.parasoft.com/parabank/index.htm");
+			PO_LoginPage loginpage=PageFactory.initElements(driver,PO_LoginPage.class);
+			
+			//**********************************************************************************
+			//*************************TC Steps*************************************************
+			//**********************************************************************************
+			loginpage.kw_login_into_parabank("johnny","demo");
+			
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}}
+	public void t_02_negative_enter_wrong_user_name_wrong_password() {
+		try {
+			
+			//**********************************************************************************
+			//*************************Intialization********************************************
+			//**********************************************************************************
+			BrowserManager oBrowserManager = new BrowserManager();
+			WebDriver driver;	
+			driver = oBrowserManager.GetBrowser("chrome");
+			oBrowserManager.NavigateToPage(driver, "http://parabank.parasoft.com/parabank/index.htm");
+			PO_LoginPage loginpage=PageFactory.initElements(driver,PO_LoginPage.class);
+			
+			//**********************************************************************************
+			//*************************TC Steps*************************************************
+			//**********************************************************************************
+			loginpage.kw_login_into_parabank("cena","john");
+			
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}}
 }//end test class
