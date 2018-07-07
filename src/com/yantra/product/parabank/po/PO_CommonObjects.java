@@ -9,21 +9,21 @@ public class PO_CommonObjects
 {
         WebDriver driver;
    	 @FindBy(how=How.LINK_TEXT,using="Open New Account")
-   	 public WebElement Link_open_new_account;;
+   	 private WebElement Link_open_new_account;;
    	 @FindBy(how=How.LINK_TEXT,using="Accounts Overview")
-   	 public WebElement Link_accounts_overview;;
+   	 private WebElement Link_accounts_overview;;
   	 @FindBy(how=How.LINK_TEXT,using="Transfer Funds")
-   	 public WebElement Link_transfer_funds;;
+   	 private WebElement Link_transfer_funds;;
 	 @FindBy(how=How.LINK_TEXT,using="Bill Pay")
-   	 public WebElement Link_bill_pay;;
+   	 private WebElement Link_bill_pay;;
 	 @FindBy(how=How.LINK_TEXT,using="Find Transactions")
-   	 public WebElement Link_find_transactions;;
+   	 private WebElement Link_find_transactions;;
 	 @FindBy(how=How.LINK_TEXT,using="Update Contact Info")
-   	 public WebElement Link_update_contact_info;;
+   	 private WebElement Link_update_contact_info;;
 	 @FindBy(how=How.LINK_TEXT,using="Request Loan")
-   	 public WebElement Link_request_loan;;
+   	 private WebElement Link_request_loan;;
 	 @FindBy(how=How.LINK_TEXT,using="Log Out")
-   	 public WebElement Link_log_out;;
+   	 private WebElement Link_log_out;;
    	 
    	 
 	 public void click_Open_New_Account()
