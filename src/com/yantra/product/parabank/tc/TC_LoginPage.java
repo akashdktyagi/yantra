@@ -68,7 +68,7 @@ public class TC_LoginPage {
 		
 	}//end method
 	 
-	public void t_02_negative_enter_wrong_user_name_correct_password() {
+	public void t_03_negative_enter_wrong_user_name_correct_password() {
 		try {
 			
 			//**********************************************************************************
@@ -89,7 +89,7 @@ public class TC_LoginPage {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}}
-	public void t_02_negative_enter_wrong_user_name_wrong_password() {
+	public void t_04_negative_enter_wrong_user_name_wrong_password() {
 		try {
 			
 			//**********************************************************************************
