@@ -71,7 +71,7 @@ public class PO_CommonObjects
  		click_Request_Loan();
  		click_Log_Out();
  	 }
-	 public  PO_CommonObjects(WebDriver d)
+	 public  PO_CommonObjects()
 	 {
 		 this.driver= d;
 	 }

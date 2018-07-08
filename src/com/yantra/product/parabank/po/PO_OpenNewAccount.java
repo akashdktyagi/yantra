@@ -6,38 +6,37 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 public class PO_OpenNewAccount {
+
 	WebDriver driver;
-	@FindBy(xpath= "//a[@href='/parabank/openaccount.htm']")
-	WebElement newaccount;
+	//@FindBy(xpath= "//a[@href='/parabank/openaccount.htm']")
+	//private WebElement newaccount;
 	@FindBy(id="type")
-	WebElement accounttype;
+	private WebElement accounttype;
 	@FindBy(id="fromAccountId")
-	WebElement minamount;
+	private WebElement minamount;
 	@FindBy(xpath="Open New Account")
-	WebElement submit;
-	 private void clickopennewaccount()
-	 {
-		 newaccount.click();
-		 
-	 }
-	 private void selectaccounttype()
+	private WebElement submit;
+	// private void clickopennewaccount()
+	 
+	 private void selectaccounttype(String visibletext )
 	 {
 		 Select actype= new Select(accounttype);
-		 actype.selectByValue("1"); 
+		 actype.selectByVisibleText(visibletext);
 	 }
-	 private void selectminamount()
+	 private void selectminamount(String val)
 	 {
 		 Select amount= new Select(minamount);
-		 amount.selectByValue("12900");
+		 amount.selectByValue(val);
 	 }
 	 private void clicksubmit()
 	 {
 		 submit.click();
 	 }
-	 public void kw_open_new_account() 
+	 public void kw_open_new_account(String visibletext1, String val ) 
 	 {
-		 clickopennewaccount();
-		 selectaccounttype();
+		// clickopennewaccount();
+		 selectaccounttype(visibletext1);
+		 selectminamount(val);
 		 clicksubmit();
 		 
 		 
