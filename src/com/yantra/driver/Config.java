@@ -1,5 +1,6 @@
 package com.yantra.driver;
 
+import java.io.File;
 /*
  * @author: Akash Tyagi
  * date:7May2018
@@ -24,7 +25,8 @@ public class Config {
 		//Read the Config
 		Properties p = new Properties();
 		InputStream s = null;
-		s = new FileInputStream("config.properties");
+		//File f=new File();
+		s = new FileInputStream("D:\\VisionIT\\SeleniumFW\\yantra\\src\\com\\yantra\\config.properties");
 		p.load(s);
 		
 		Enumeration<?> e  = p.propertyNames();

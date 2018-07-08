@@ -33,7 +33,7 @@ public class BrowserManager implements ILogAndReport {
 			if (System.getProperty("os.name").equals("Mac OS X")){
 				System.setProperty("webdriver.chrome.driver", "/Users/akashtyagi/Dropbox/AutoWorkspace/dependencies/chromedriver");
 			}else{
-				System.setProperty("webdriver.chrome.driver", config_data.get("CHROME_DRIVER_EXE_PATH") +".exe");
+				System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32\\chromedriver.exe");
 			}  
 			
 			driver = new ChromeDriver();
@@ -48,7 +48,7 @@ public class BrowserManager implements ILogAndReport {
 	}//end method
 	
 	public boolean NavigateToPage(WebDriver driver, String url){
-		driver.navigate().to(url);
+driver.navigate().to(url);
 		WriteLogAndReport(logger, "info", "pass", "Navigation to Url successfull : " + url);
 		return true;
 	}//end method
