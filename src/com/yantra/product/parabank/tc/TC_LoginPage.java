@@ -34,7 +34,7 @@ public class TC_LoginPage {
 		//*************************TC Steps*************************************************
 		//**********************************************************************************
 		loginpage.kw_login_into_parabank("john","demo");
-			
+		loginpage.kw_validate_login_success();
 	}
 	
 	/*
@@ -44,7 +44,7 @@ public class TC_LoginPage {
 	 * Change History:
 	 * 
 	 */
-	public void t_02_negative_enter_correct_user_name_wrong_password() {
+	public void t_02_negative_enter_correct_user_name_wrong_password()throws IOException {
 		try {
 			
 			//**********************************************************************************
@@ -60,6 +60,7 @@ public class TC_LoginPage {
 			//*************************TC Steps*************************************************
 			//**********************************************************************************
 			loginpage.kw_login_into_parabank("john","wrong");
+			loginpage.kw_validate_login_success();
 			
 		}catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -68,7 +69,7 @@ public class TC_LoginPage {
 		
 	}//end method
 	 
-	public void t_03_negative_enter_wrong_user_name_correct_password() {
+	public void t_03_negative_enter_wrong_user_name_correct_password()throws IOException {
 		try {
 			
 			//**********************************************************************************
@@ -84,12 +85,12 @@ public class TC_LoginPage {
 			//*************************TC Steps*************************************************
 			//**********************************************************************************
 			loginpage.kw_login_into_parabank("johnny","demo");
-			
+			loginpage.kw_validate_login_success();
 		}catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}}
-	public void t_04_negative_enter_wrong_user_name_wrong_password() {
+	public void t_04_negative_enter_wrong_user_name_wrong_password()throws IOException{
 		try {
 			
 			//**********************************************************************************
@@ -105,6 +106,7 @@ public class TC_LoginPage {
 			//*************************TC Steps*************************************************
 			//**********************************************************************************
 			loginpage.kw_login_into_parabank("cena","john");
+			loginpage.kw_validate_login_success();
 			
 		}catch (Exception e) {
 			// TODO Auto-generated catch block
