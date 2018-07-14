@@ -31,6 +31,8 @@ public class PO_OpenNewAccount {
 	 private void clicksubmit()
 	 {
 		 submit.click();
+		 
+		 ClickElement(submit);
 	 }
 	 public void kw_open_new_account(String visibletext1, String val ) 
 	 {
