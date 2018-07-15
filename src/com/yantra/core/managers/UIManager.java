@@ -19,7 +19,7 @@ import com.yantra.core.interfaces.IUIManager;
  * @author akashtyagi
  *
  */
-class UIManager implements IUIManager,ILogAndReport {
+public class UIManager implements IUIManager,ILogAndReport {
 	
 	final Logger logger = Logger.getLogger(UIManager.class);
 
@@ -74,14 +74,16 @@ class UIManager implements IUIManager,ILogAndReport {
 
 	@Override
 	public HashMap<Integer, HashMap<Integer, String>> GetUITableText(WebElement _locator) {
+		return null;
 		// TODO Auto-generated method stub
-		HashMap<Integer, HashMap<Integer, String>> result= new HashMap<Integer,HashMap<Integer,String>>();
+		
+		/*HashMap<Integer, HashMap<Integer, String>> result= new HashMap<Integer,HashMap<Integer,String>>();
 		HashMap<Integer,String> clm_temp;
 		List<WebElement> o_col_rows = _locator.findElements(By.tagName("tr"));
 		if (o_col_rows.size()==0) {
 			WriteLogAndReport(logger, "info", "warn", "Text Could not be fetched since table row size is 0 for Locator: " + _locator.toString());
 		}else {
-			List<WebElement> o_col_clm
+			//List<WebElement> o_col_clm
 			for(int i=0;i<o_col_rows.size();i++) {
 				o_col_clm = o_col_rows.get(i).findElements(By.tagName("td"));
 				for(int j=0;j<o_col_clm.size();j++){
@@ -92,18 +94,18 @@ class UIManager implements IUIManager,ILogAndReport {
 
 		}
 		
-		
+		*/
 		
 	}
 
 	@Override
-	public void GetRowWithCellText(WebElement _locator) {
+	public void GetUITableRowClmWithCellText(WebElement _locator) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public List<WebElement> GetChildItemsWithRowAndClm(WebElement _locator,int row, int clm, By desc) {
+	public List<WebElement> GetUITableChildItemsWithRowAndClm(WebElement _locator,int row, int clm, By desc) {
 		// TODO Auto-generated method stub
 		return null;
 	}
