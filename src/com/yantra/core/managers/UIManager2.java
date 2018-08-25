@@ -19,9 +19,9 @@ import com.yantra.core.interfaces.IUIManager;
  * @author akashtyagi
  *
  */
-public class UIManager implements IUIManager,ILogAndReport {
+public class UIManager2 implements IUIManager,ILogAndReport {
 	
-	final Logger logger = Logger.getLogger(UIManager.class);
+	final Logger logger = Logger.getLogger(UIManager2.class);
 
 	/**
 	 * 
@@ -33,7 +33,6 @@ public class UIManager implements IUIManager,ILogAndReport {
 	@Override
 	public void ClickElement(WebElement _locator) {
 		// TODO Auto-generated method stub
-		//WebDriver wait
 		_locator.click();
 		WriteLogAndReport(logger, "info", "info", "Clicked on Locator:" + _locator.toString());
 		//logger.info("Clicked on Locator:" + _locator.toString());
@@ -75,44 +74,74 @@ public class UIManager implements IUIManager,ILogAndReport {
 
 	@Override
 	public HashMap<Integer, HashMap<Integer, String>> GetUITableText(WebElement _locator) {
-		return null;
 		// TODO Auto-generated method stub
-		
-		/*HashMap<Integer, HashMap<Integer, String>> result= new HashMap<Integer,HashMap<Integer,String>>();
-		HashMap<Integer,String> clm_temp;
 		List<WebElement> o_col_rows = _locator.findElements(By.tagName("tr"));
-		if (o_col_rows.size()==0) {
-			WriteLogAndReport(logger, "info", "warn", "Text Could not be fetched since table row size is 0 for Locator: " + _locator.toString());
-		}else {
-			//List<WebElement> o_col_clm
-			for(int i=0;i<o_col_rows.size();i++) {
-				o_col_clm = o_col_rows.get(i).findElements(By.tagName("td"));
-				for(int j=0;j<o_col_clm.size();j++){
-					
-				}
-				clm_temp = o_col_clm.get(i)
+		int i_row_count = o_col_rows.size();
+		List<WebElement> o_col_clms;
+		int i_clm_count;
+		String cell_text;
+		//HashMap<Integer,HashMap<Integer,String>> o = new 
+		
+		HashMap<Integer, HashMap<Integer, String>> result_map= new HashMap<Integer,HashMap<Integer,String>>();
+		HashMap<Integer, String> o_col_map=null;;
+		
+		for (int i=0;i<i_row_count;i++) {
+			o_col_clms = o_col_rows.get(i).findElements(By.tagName("td"));
+			i_clm_count = o_col_clms.size();
+			for(int j=0;j<i_clm_count;j++) {
+				cell_text = o_col_clms.get(j).getText();
+				//System.out.println(cell_text);
+				o_col_map.put(j, cell_text);
 			}
-
+			result_map.put(i, o_col_map);
 		}
 		
-		*/
+		return result_map;
 		
-	}
+	}//end method
 
 	@Override
-	public void GetUITableRowClmWithCellText(WebElement _locator) {
-		// TODO Auto-generated method stub
+	public int[] GetUITableRowClmWithCellText(WebElement _locator, String s_expected_text) {
+
+		List<WebElement> o_col_rows = _locator.findElements(By.tagName("tr"));
+		int i_row_count = o_col_rows.size();
+		List<WebElement> o_col_clms;
+		int i_clm_count;
+		String cell_text; 
+		int[] a_row_clm=null;
+		
+		HashMap<Integer, HashMap<Integer, String>> result_map= new HashMap<Integer,HashMap<Integer,String>>();
+		HashMap<Integer, String> o_col_map=null;;
+		
+		for (int i=0;i<i_row_count;i++) {
+			o_col_clms = o_col_rows.get(i).findElements(By.tagName("td"));
+			i_clm_count = o_col_clms.size();
+			for(int j=0;j<i_clm_count;j++) {
+				cell_text = o_col_clms.get(j).getText();
+				if (cell_text.equalsIgnoreCase(s_expected_text)){
+					a_row_clm[0]=i;
+					a_row_clm[1]=j;
+					
+				}
+				//System.out.println(cell_text);
+				o_col_map.put(j, cell_text);
+			}
+			result_map.put(i, o_col_map);
+		}
+		
+		return a_row_clm;
 		
 	}
 
 	@Override
 	public List<WebElement> GetUITableChildItemsWithRowAndClm(WebElement _locator,int row, int clm, By desc) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		
+		List<WebElement> o_collection_rows = _locator.findElements(By.tagName("tr"));
+		
+		List<WebElement> o_collection_clms = o_collection_rows.get(row).findElements(By.tagName("td"));
+		List<WebElement> o_collection_child_items = o_collection_clms.get(clm).findElements(desc);
+		return o_collection_child_items;
 
+	}//end method
 
-
-
-
-}
+}//end class

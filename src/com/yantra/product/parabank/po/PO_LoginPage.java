@@ -8,8 +8,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-public class PO_LoginPage {
-	WebDriver driver;
+import com.yantra.core.interfaces.ILogAndReport;
+
+public class PO_LoginPage{
+	
+	 WebDriver driver;
+	 
 	 @FindBy(how=How.XPATH,using="//input[@name='username']")
 	 private WebElement txtbx_UserName;
 
@@ -21,20 +25,31 @@ public class PO_LoginPage {
 	
 	 @FindBy(how=How.CLASS_NAME,using="title")
 	 private WebElement txt;
+	 
+	 public  PO_LoginPage(WebDriver d)
+	 {
+		 this.driver= d;
+		 
+	 }
+	 
+	 //**************************************************************************
+	 //**********************Locators Header and Setters*************************
+	 //**************************************************************************
 	
 	 private void SetUsername(String Username) {
+		
 		 txtbx_UserName.sendKeys(Username);
 	 }
-	 private void SetPassword(String password) 
-	 {txtbx_Password.sendKeys(password);
-		 
+	 private void SetPassword(String password) {
+		 txtbx_Password.sendKeys(password);
+
 	 }
-	 private void clickSubmit()
-	 {btn_Login.click();
-		 
+	 private void clickSubmit() {
+	 	btn_Login.click();
+
 	 }
-	 private String Gettext()
-	 {
+	 private String Gettext(){
+	 
 		 return txt.getText();
 	 }
 	 
@@ -45,11 +60,7 @@ public class PO_LoginPage {
 		 Gettext();
 	 }
 	 
-	 public  PO_LoginPage(WebDriver d)
-	 {
-		 this.driver= d;
-		 
-	 }
+
 	 
 	 public void kw_validate_login_success()
 	 {
