@@ -9,7 +9,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-
+/*   Author kalyani gaikwad
+/*   frames and Actions
+*  1.Droppable 
+*  2.Draggable
+*  3.slider
+*  4.selectable
+*  5.sortable
+*  6.spinner
+*  7.tabs
+*  8.datepicker
+*  9.checkboxradio
+*  10.tooltip
+*  11.resizable
+*/
 
 public class Frames_and_actions {
 
@@ -26,7 +39,7 @@ public class Frames_and_actions {
 
 
 		//droppable
-		/*driver.get("https://jqueryui.com/droppable/");
+		driver.get("https://jqueryui.com/droppable/");
 driver.manage().window().maximize();
 driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
@@ -151,7 +164,7 @@ if(date.equalsIgnoreCase("29"))
 
 }
 
-Thread.sleep(3000);*/
+Thread.sleep(3000);
 
 
 
@@ -180,9 +193,26 @@ Thread.sleep(3000);*/
 		driver.navigate().to("https://jqueryui.com/tooltip/");
 		driver.manage().window().maximize();
 		driver.switchTo().frame(0);
-		WebElement tooltip=driver.findElement(By.xpath("//a[@title='That's what this widget is']"));
-
-
+		
+		//for your age textbox
+		WebElement your_age_Element =driver.findElement(By.id("age"));
+		action.moveToElement(your_age_Element).perform();
+		Thread.sleep(4000);
+		
+        //for tooltip link
+		WebElement tooltipElement=driver.findElement (By.xpath("/html/body/p[1]/a"));
+		action.moveToElement(tooltipElement).perform();
+		Thread.sleep(4000);
+		
+		//for theme roller link
+		WebElement theme_Roller_Element=driver.findElement(By.xpath("/html/body/p[2]/a"));
+		action.moveToElement(theme_Roller_Element).perform();
+		Thread.sleep(4000);
+		
+		
+		
+		
+		
 		//resizable
 		WebDriver driver1;
 		driver1 = new ChromeDriver();
