@@ -161,7 +161,6 @@ driver.switchTo().frame(0);
 WebElement tooltip=driver.findElement(By.xpath("//a[@title='That's what this widget is']"));
 
 
-Thread.sleep(4000);
 //resizable
 WebDriver driver1;
 driver1 = new ChromeDriver();
