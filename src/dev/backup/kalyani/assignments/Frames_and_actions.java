@@ -160,7 +160,7 @@ Thread.sleep(3000);*/
 		driver.manage().window().maximize();
 		driver.switchTo().frame(0);
 
-		//find all elements of select a locations
+		//find all elements of select a location
 		List<WebElement> radio_group=driver.findElements(By.xpath("//input[@type='radio'and @class='']"));
 		for(int i=0;i<radio_group.size();i++)
 		{
