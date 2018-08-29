@@ -14,19 +14,19 @@ import org.openqa.selenium.interactions.Actions;
 public class Frames_and_actions {
 
 	public static void main(String[] args) throws Exception {
-	
+
 		System.setProperty("webdriver.chrome.driver","F:\\VisionIT\\dependancy\\chromedriver_win32\\chromedriver.exe");
-		
-
-WebDriver driver=new ChromeDriver();
-driver.manage().window().maximize();
-
-//creating object of action
-Actions action=new Actions(driver);
 
 
-//droppable
-driver.get("https://jqueryui.com/droppable/");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+
+		//creating object of action
+		Actions action=new Actions(driver);
+
+
+		//droppable
+		/*driver.get("https://jqueryui.com/droppable/");
 driver.manage().window().maximize();
 driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
@@ -146,33 +146,55 @@ String date=dates.get(i).getText();
 if(date.equalsIgnoreCase("29"))
 {
 	dates.get(i).click();
-	
+
 }
-	
+
 }
-	
-Thread.sleep(3000);
+
+Thread.sleep(3000);*/
 
 
-//tooltip
-driver.navigate().to("https://jqueryui.com/tooltip/");
-driver.manage().window().maximize();
-driver.switchTo().frame(0);
-WebElement tooltip=driver.findElement(By.xpath("//a[@title='That's what this widget is']"));
 
+		//checkboxradio
+		driver.navigate().to("https://jqueryui.com/checkboxradio/");
+		driver.manage().window().maximize();
+		driver.switchTo().frame(0);
 
-//resizable
-WebDriver driver1;
-driver1 = new ChromeDriver();
-driver1.manage().window().maximize();
-driver1.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-driver1.get("http://only-testing-blog.blogspot.in/2014/09/drag-and-drop.html");
-WebElement rSizable=driver1.findElement(By.xpath("//div[@id='resizable']/div[3]"));  
+		//find all elements of select a location
+		List<WebElement> radio_group=driver.findElements(By.xpath("//input[@type='radio'and @class='']"));
+		for(int i=0;i<radio_group.size();i++)
+		{
+			WebElement local_radio=radio_group.get(i);
+			String value=local_radio.getAttribute("value");
+			
+			if(value.equalsIgnoreCase("New York"))
+			{
+				local_radio.click();
+
+			}
+		}
+
 
 		
-	new Actions(driver1).clickAndHold(rSizable).moveByOffset(100,60).release().perform();
-	driver1.quit();
-Thread.sleep(4000);
+		//tooltip
+		driver.navigate().to("https://jqueryui.com/tooltip/");
+		driver.manage().window().maximize();
+		driver.switchTo().frame(0);
+		WebElement tooltip=driver.findElement(By.xpath("//a[@title='That's what this widget is']"));
+
+
+		//resizable
+		WebDriver driver1;
+		driver1 = new ChromeDriver();
+		driver1.manage().window().maximize();
+		driver1.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver1.get("http://only-testing-blog.blogspot.in/2014/09/drag-and-drop.html");
+		WebElement rSizable=driver1.findElement(By.xpath("//div[@id='resizable']/div[3]"));  
+
+
+		new Actions(driver1).clickAndHold(rSizable).moveByOffset(100,60).release().perform();
+		driver1.quit();
+		Thread.sleep(4000);
 
 
 	}
