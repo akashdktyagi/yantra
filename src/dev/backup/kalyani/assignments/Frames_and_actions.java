@@ -21,7 +21,8 @@ import org.openqa.selenium.interactions.Actions;
 *  8.datepicker
 *  9.checkboxradio
 *  10.tooltip
-*  11.resizable
+*  11.menu
+*  12.resizable
 */
 
 public class Frames_and_actions {
@@ -167,7 +168,6 @@ if(date.equalsIgnoreCase("29"))
 Thread.sleep(3000);
 
 
-
 		//checkboxradio
 		driver.navigate().to("https://jqueryui.com/checkboxradio/");
 		driver.manage().window().maximize();
@@ -194,24 +194,82 @@ Thread.sleep(3000);
 		driver.manage().window().maximize();
 		driver.switchTo().frame(0);
 		
-		//for your age textbox
+		//1.for your age textbox
 		WebElement your_age_Element =driver.findElement(By.id("age"));
 		action.moveToElement(your_age_Element).perform();
 		Thread.sleep(4000);
 		
-        //for tooltip link
+        //2.for tooltip link
 		WebElement tooltipElement=driver.findElement (By.xpath("/html/body/p[1]/a"));
 		action.moveToElement(tooltipElement).perform();
 		Thread.sleep(4000);
 		
-		//for theme roller link
+		//3.for theme roller link
 		WebElement theme_Roller_Element=driver.findElement(By.xpath("/html/body/p[2]/a"));
 		action.moveToElement(theme_Roller_Element).perform();
 		Thread.sleep(4000);
 		
 		
+		//menu
+		driver.navigate().to("https://jqueryui.com/menu//");
+		driver.manage().window().maximize();
+		driver.switchTo().frame(0);
+		WebElement list_of_menu_elements=driver.findElement(By.xpath("//ul[@id='menu'and @class='ui-menu ui-widget ui-widget-content']"));
+		action.moveToElement(list_of_menu_elements).perform();
+		Thread.sleep(4000);
+		WebElement music_element=driver.findElement(By.id("ui-id-9"));
+		action.moveToElement(music_element).perform();
+		Thread.sleep(4000);
+		WebElement list_of_sub_menu_elements=driver.findElement(By.id("ui-id-10"));
+		action.moveToElement(list_of_sub_menu_elements).perform();
+		Thread.sleep(4000);
+
+		
+		//select menu
+		driver.navigate().to("https://jqueryui.com/selectmenu/");
+		driver.manage().window().maximize();
+		driver.switchTo().frame(0);
+		WebElement select_speed_elements=driver.findElement(By.xpath("//span[@class='ui-selectmenu-text']"));
+		action.click(select_speed_elements).perform();
+		Thread.sleep(4000);
+		
+		//working only when other elements in select_menu are in comment
+		WebElement select_a_file_elements=driver.findElement(By.xpath("//span[2][@class='ui-selectmenu-text']"));
+		action.click(select_a_file_elements).perform();
+		Thread.sleep(4000);
+		
+		WebElement select_a_no_elements=driver.findElement(By.id("number-button"));
+		action.click(select_a_no_elements).perform();
+		Thread.sleep(4000);
+		
+		//working only when other elements in select_menu are in comment
+		WebElement select_a_title_elements=driver.findElement(By.id("salutation-button"));
+		action.click(select_a_title_elements).perform();
+		Thread.sleep(4000);
 		
 		
+		//control_group
+		driver.navigate().to("https://jqueryui.com/controlgroup/");
+		driver.manage().window().maximize();
+		driver.switchTo().frame(0);
+		WebElement control_group=driver.findElement(By.xpath("//span[@class='ui-selectmenu-text']"));
+		action.click(control_group).moveToElement(control_group).perform();
+		Thread.sleep(4000);
+		WebElement control_group_list=driver.findElement(By.id("ui-id-5"));
+		action.click( control_group_list).perform();
+		Thread.sleep(4000);
+		WebElement checkbox=driver.findElement(By.xpath("//span[@class='ui-checkboxradio-icon ui-corner-all ui-icon ui-icon-background ui-icon-blank']"));
+		action.click( checkbox).perform();
+		Thread.sleep(4000);
+		WebElement checkbox_radio=driver.findElement(By.xpath("//label[@class='ui-button ui-widget ui-checkboxradio-label ui-controlgroup-item']"));
+		action.click( checkbox_radio).perform();
+		Thread.sleep(4000);
+		WebElement toggle=driver.findElement(By.xpath("//span[@class='ui-button-icon ui-icon ui-icon-triangle-1-n']"));
+		action.click( toggle).perform();
+		Thread.sleep(4000);
+		WebElement book_now=driver.findElement(By.xpath("//button[@class='ui-widget ui-controlgroup-item ui-button ui-corner-right']"));
+		action.click( book_now).perform();
+		Thread.sleep(4000);
 		
 		//resizable
 		WebDriver driver1;
