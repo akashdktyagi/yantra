@@ -75,7 +75,7 @@ Thread.sleep(4000);
 
 
 
-//selectable
+//selectable.
 driver.navigate().to("https://jqueryui.com/selectable/");
 driver.manage().window().maximize();
 driver.switchTo().frame(0);
