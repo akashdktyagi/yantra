@@ -74,7 +74,6 @@ action.clickAndHold(slider).moveByOffset(-50, 0).release(slider).build().perform
 Thread.sleep(4000);
 
 
-
 //selectable.
 driver.navigate().to("https://jqueryui.com/selectable/");
 driver.manage().window().maximize();
