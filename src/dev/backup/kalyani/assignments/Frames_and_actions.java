@@ -22,7 +22,9 @@ import org.openqa.selenium.interactions.Actions;
 *  9.checkboxradio
 *  10.tooltip
 *  11.menu
-*  12.resizable
+*  12.select menu
+*  13.control group
+*  14.resizable
 */
 
 public class Frames_and_actions {
@@ -172,22 +174,34 @@ Thread.sleep(3000);
 		driver.manage().window().maximize();
 		driver.switchTo().frame(0);
 
-		//find all elements of select a location
-		List<WebElement> radio_group=driver.findElements(By.xpath("//input[@type='radio'and @class='']"));
-		for(int i=0;i<radio_group.size();i++)
-		{
-			WebElement local_radio=radio_group.get(i);
-			String value=local_radio.getAttribute("value");
-			
-			if(value.equalsIgnoreCase("New York"))
-			{
-				local_radio.click();
+		WebElement select_location_element=driver.findElement(By.xpath("//span[@class='ui-checkboxradio-icon ui-corner-all ui-icon ui-icon-background ui-icon-blank']"));
+		action.click(select_location_element).perform();
+		Thread.sleep(4000);
 
-			}
-		}
+		WebElement select_hotel_rating_element=driver.findElement(By.xpath("//label[@class='ui-checkboxradio-label ui-corner-all ui-button ui-widget']"));
+		action.click(select_hotel_rating_element).perform();
+		Thread.sleep(4000);
 
+		WebElement select_bed_type_element=driver.findElement(By.xpath("//label[@for='checkbox-nested-3']"));
+		action.click(select_bed_type_element).perform();
+		Thread.sleep(4000);
 
 		
+		
+		
+
+		WebElement select_location_element1=driver.findElement(By.xpath("//label[@for='radio-2']"));
+		action.click(select_location_element1).perform();
+		Thread.sleep(4000);
+
+		WebElement select_hotel_rating_element1=driver.findElement(By.xpath("//label[@for='checkbox-2']"));
+		action.click(select_hotel_rating_element1).perform();
+		Thread.sleep(4000);
+
+		WebElement select_bed_type_element1=driver.findElement(By.xpath("//label[@for='checkbox-nested-4']"));
+		action.click(select_bed_type_element1).perform();
+		Thread.sleep(4000);
+
 		//tooltip
 		driver.navigate().to("https://jqueryui.com/tooltip/");
 		driver.manage().window().maximize();
