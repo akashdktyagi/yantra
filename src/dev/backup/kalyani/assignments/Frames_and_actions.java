@@ -42,7 +42,7 @@ public class Frames_and_actions {
 
 
 		//droppable
-		driver.get("https://jqueryui.com/droppable/");
+		/*driver.get("https://jqueryui.com/droppable/");
 driver.manage().window().maximize();
 driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
@@ -282,10 +282,18 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 		WebElement book_now=driver.findElement(By.xpath("//button[@class='ui-widget ui-controlgroup-item ui-button ui-corner-right']"));
 		action.click( book_now).perform();
+		Thread.sleep(4000);*/
+		
+		//autocomplete
+		driver.navigate().to("https://jqueryui.com/autocomplete/");
+		driver.manage().window().maximize();
+		driver.switchTo().frame(0);
+		WebElement tags=driver.findElement(By.id("tags"));
+		action.click(tags).perform();
 		Thread.sleep(4000);
 		
 		//resizable
-		WebDriver driver1;
+		/*WebDriver driver1;
 		driver1 = new ChromeDriver();
 		driver1.manage().window().maximize();
 		driver1.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -295,7 +303,7 @@ Thread.sleep(3000);
 
 		new Actions(driver1).clickAndHold(rSizable).moveByOffset(100,60).release().perform();
 		driver1.quit();
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 
 
 	}
