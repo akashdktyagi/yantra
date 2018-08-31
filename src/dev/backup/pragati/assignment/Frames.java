@@ -19,10 +19,11 @@ public class Frames {
 		driver.get("https://jqueryui.com/droppable/");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	     driver.switchTo().frame(0);
-	     WebElement dragg=driver.findElement(By.xpath("//input[@id='draggable']"));
-	     WebElement drop=driver.findElement(By.xpath("//input[@id='droppable']"));
+	     
+	  
+	     WebElement dragg=driver.findElement(By.id("draggable"));
+	     WebElement drop=driver.findElement(By.id("droppable"));
 	     action.dragAndDrop(dragg, drop).perform();
-	
 	
 
 }
