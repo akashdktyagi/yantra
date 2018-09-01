@@ -4,6 +4,8 @@
 package com.yantra.core.interfaces;
 
 import org.apache.log4j.Logger;
+import org.testng.Assert;
+import org.testng.Reporter;
 
 /**
  * @author akashtyagi
@@ -18,7 +20,20 @@ public interface ILogAndReport {
 	//			  sLogLevel=>info, trace, warn, debug
 	//			  sLogType: pass, fail, fail_not_exit, warn, pass_no_screenshot, fail_no_screenshot, fail_not_exit_no_screenshot
 	public default void WriteLogAndReport(Logger logger, String sLogLevel, String sLogType, String sMessage){
-		System.out.println("Log level:" + sLogType + " Message: " + sMessage);
+		//System.out.println("Log level:" + sLogType + " Message: " + sMessage);
+		String msg = "LogLevel:" + sLogLevel + " LogType: " + sLogType + " Message: " + sMessage;
+		
+		switch(sLogType.toLowerCase()) {
+		
+		case "pass":
+			Reporter.log(msg);
+			Assert.assertEquals(true, true);
+			break;
+		case "fail":
+			Reporter.log(msg);
+			Assert.fail(msg);
+			break;
+		}
 		
 
 		switch ( sLogLevel.toLowerCase() ){

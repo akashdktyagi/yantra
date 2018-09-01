@@ -80,6 +80,7 @@ import org.testng.annotations.BeforeMethod;
 			@DataProvider(name="SearchProvider")
 			public Object[][] getDataFromDataprovider(){
 				return new Object[][] {
+					
 					{ "Name", "Kushal Thadani" },
 					{ "Address", "Sai mastic co-society pimple chouk" },
 					{ "City", "Pune" },

@@ -6,6 +6,7 @@ import java.io.File;
  * date:7May2018
  */
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Enumeration;
@@ -17,7 +18,7 @@ public class Config {
 		
 	private HashMap<String,String> hm = new HashMap<String,String>();
 	
-	public HashMap<String, String> getHm() {
+	public HashMap<String, String> CONFIG_DATA() {
 		return hm;
 	}
 	
@@ -26,7 +27,7 @@ public class Config {
 		Properties p = new Properties();
 		InputStream s = null;
 		//File f=new File();
-		s = new FileInputStream("D:\\VisionIT\\SeleniumFW\\yantra\\src\\com\\yantra\\config.properties");
+		s = new FileInputStream("config.properties");
 		p.load(s);
 		
 		Enumeration<?> e  = p.propertyNames();
