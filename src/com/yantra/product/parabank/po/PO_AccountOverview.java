@@ -22,14 +22,14 @@ public class PO_AccountOverview {
 	//*******************************************************************
 	@FindBy(how=How.ID,using="accountTable")
 	private WebElement tbl_account_overview;
+	
+	 @FindBy(how=How.CLASS_NAME,using="title")
+	 private WebElement txt_account_overview_header;
 
 	//*******************************************************************
 	//*************************Elements Getter and Setters***************
 	//*******************************************************************
-	private WebElement getAccountOverViewTableContentInMap() {
-		
-		return tbl_account_overview;
-	}
+	
 
 	
 	//*******************************************************************

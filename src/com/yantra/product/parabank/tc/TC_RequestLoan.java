@@ -30,7 +30,7 @@ public void t_01_validate_parabank_requestloan() throws IOException{
 		oBrowserManager.NavigateToPage(driver, "http://parabank.parasoft.com/parabank/index.htm");
 		
 		PO_LoginPage loginpage=PageFactory.initElements(driver,PO_LoginPage.class);
-		loginpage.kw_login_into_parabank("john","demo");
+		loginpage.kw_login_into_parabank("john","demo",true);
 		
 		//**********************************************************************************
 		//*************************TC Steps*************************************************
@@ -54,7 +54,7 @@ public void t_02_validate_parabank_requestloan() throws IOException{
 	oBrowserManager.NavigateToPage(driver, "http://parabank.parasoft.com/parabank/index.htm");
 	
 	PO_LoginPage loginpage=PageFactory.initElements(driver,PO_LoginPage.class);
-	loginpage.kw_login_into_parabank("john","demo");
+	loginpage.kw_login_into_parabank("john","demo",true);
 	
 	//**********************************************************************************
 	//*************************TC Steps*************************************************
@@ -76,7 +76,7 @@ public void t_03_validate_parabank_requestloan() throws IOException{
 	oBrowserManager.NavigateToPage(driver, "http://parabank.parasoft.com/parabank/index.htm");
 	
 	PO_LoginPage loginpage=PageFactory.initElements(driver,PO_LoginPage.class);
-	loginpage.kw_login_into_parabank("john","demo");
+	loginpage.kw_login_into_parabank("john","demo",true);
 	
 	//**********************************************************************************
 	//*************************TC Steps*************************************************
@@ -98,7 +98,7 @@ public void t_04_validate_parabank_requestloan() throws IOException{
 	oBrowserManager.NavigateToPage(driver, "http://parabank.parasoft.com/parabank/index.htm");
 	
 	PO_LoginPage loginpage=PageFactory.initElements(driver,PO_LoginPage.class);
-	loginpage.kw_login_into_parabank("john","demo");
+	loginpage.kw_login_into_parabank("john","demo",true);
 	
 	//**********************************************************************************
 	//*************************TC Steps*************************************************
@@ -120,7 +120,7 @@ public void t_05_validate_parabank_requestloan() throws IOException{
 	oBrowserManager.NavigateToPage(driver, "http://parabank.parasoft.com/parabank/index.htm");
 	
 	PO_LoginPage loginpage=PageFactory.initElements(driver,PO_LoginPage.class);
-	loginpage.kw_login_into_parabank("john","demo");
+	loginpage.kw_login_into_parabank("john","demo",true);
 	
 	//**********************************************************************************
 	//*************************TC Steps*************************************************
@@ -142,7 +142,7 @@ public void t_06_validate_parabank_requestloan() throws IOException{
 	oBrowserManager.NavigateToPage(driver, "http://parabank.parasoft.com/parabank/index.htm");
 	
 	PO_LoginPage loginpage=PageFactory.initElements(driver,PO_LoginPage.class);
-	loginpage.kw_login_into_parabank("john","demo");
+	loginpage.kw_login_into_parabank("john","demo",true);
 	
 	//**********************************************************************************
 	//*************************TC Steps*************************************************
@@ -164,7 +164,7 @@ public void t_07_validate_parabank_requestloan() throws IOException{
 	oBrowserManager.NavigateToPage(driver, "http://parabank.parasoft.com/parabank/index.htm");
 	
 	PO_LoginPage loginpage=PageFactory.initElements(driver,PO_LoginPage.class);
-	loginpage.kw_login_into_parabank("john","demo");
+	loginpage.kw_login_into_parabank("john","demo",true);
 	
 	//**********************************************************************************
 	//*************************TC Steps*************************************************
@@ -186,7 +186,7 @@ public void t_08_validate_parabank_requestloan() throws IOException{
 	oBrowserManager.NavigateToPage(driver, "http://parabank.parasoft.com/parabank/index.htm");
 	
 	PO_LoginPage loginpage=PageFactory.initElements(driver,PO_LoginPage.class);
-	loginpage.kw_login_into_parabank("john","demo");
+	loginpage.kw_login_into_parabank("john","demo",true);
 	
 	//**********************************************************************************
 	//*************************TC Steps*************************************************
@@ -208,7 +208,7 @@ public void t_09_validate_parabank_requestloan() throws IOException{
 	oBrowserManager.NavigateToPage(driver, "http://parabank.parasoft.com/parabank/index.htm");
 	
 	PO_LoginPage loginpage=PageFactory.initElements(driver,PO_LoginPage.class);
-	loginpage.kw_login_into_parabank("john","demo");
+	loginpage.kw_login_into_parabank("john","demo",true);
 	
 	//**********************************************************************************
 	//*************************TC Steps*************************************************

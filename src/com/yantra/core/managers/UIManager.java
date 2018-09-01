@@ -99,14 +99,16 @@ public class UIManager implements IUIManager,ILogAndReport {
 		
 	}
 
-	@Override
-	public void GetUITableRowClmWithCellText(WebElement _locator) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 	@Override
 	public List<WebElement> GetUITableChildItemsWithRowAndClm(WebElement _locator,int row, int clm, By desc) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int[] GetUITableRowClmWithCellText(WebElement _locator, String s_expected_text) {
 		// TODO Auto-generated method stub
 		return null;
 	}
