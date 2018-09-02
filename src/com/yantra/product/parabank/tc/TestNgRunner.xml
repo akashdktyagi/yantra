@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite  name="Suite">
+	<!-- Suite level parameters are defined here -->
+	<!-- 
+    <parameter name = "browser" value = "chrome"/>
+  	<parameter name = "url" value = "http://parabank.parasoft.com"/>
+  	-->
+
+  <!-- ************************************************ -->
+  <!-- *************1st Test Set*********************** -->
+  <!-- ************************************************ -->
+  <!-- Use parallel attribute and thread-count for parallel execution -->
+  <!-- If enabled is true- test set will be executed -->
+  <test parallel="true" thread-count = "2" name="LoginTests_Chrome" enabled="true" >
+  	<!-- Test Set Level Parameters are defined here -->
+    <parameter name = "browser" value = "chrome"/>
+  	<parameter name = "url" value = "http://parabank.parasoft.com"/>
+    <classes>
+		<class name="com.yantra.product.parabank.tc.TC_LoginPage">
+		<!-- Methods tag can be used to include or exclude selected methods -->>
+			<methods>
+				<include name = "t_01_validate_parabank_login"/>
+				<exclude name = "t_02_negative_enter_correct_user_name_wrong_password"/>
+				<exclude name = ".*negative.*"/>
+			</methods>
+		</class>
+    </classes>
+  </test> <!-- Test -->
+  
+  <!-- ************************************************ -->
+  <!-- *************2nd Test Set-Using Fire fox*********************** -->
+  <!-- ************************************************ -->
+
+	<test parallel="true" thread-count = "2" name="LoginTests_firefox" enabled="true" >
+    <parameter name = "browser" value = "firefox"/>
+  	<parameter name = "url" value = "http://parabank.parasoft.com"/>
+    <classes>
+      <class name="com.yantra.product.parabank.tc.TC_LoginPage"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  
+  <!-- ************************************************ -->
+  <!-- *************Running based on Groups************ -->
+  <!-- ************************************************ -->
+  <test parallel="true" thread-count = "2" name="LoginTestsBasedOnGroups" enabled="true" >
+  	<groups>
+  		<run>
+  			<inlcude name = "smoke"/>
+  		</run>
+  	</groups>
+  	<classes>
+		<class name="com.yantra.product.parabank.tc.TC_LoginPage"/>
+  	</classes>
+  </test>
+  
+</suite> <!-- Suite -->
+
+<!-- ************************************************ -->
+<!-- **************** TEST NG XML TIPS  ************* -->
+<!-- ************************************************ -->
+<!-- TIP 1: Test NG XMl DTD
+Use this Link to know what attributes can be used with what tags
+http://testng.org/testng-1.0.dtd.php 
+
+-->
+
+
+<!-- TIP 2: Run only selective test case from Class
+  <classes>
+    <class name="test.IndividualMethodsTest">
+      <methods>
+        <include name="testMethod" />
+      </methods>
+    </class>
+  </classes>
+   
+ -->
+ <!-- TIP 3: Run all test case from Class
+ 
+     <classes>
+      <class name="com.yantra.product.parabank.tc.TC_OpenNewAccount"/>
+    </classes>
+ -->
+ 
+ <!-- TIP 4:  Run based on Groups
+   <test parallel="true" thread-count = "2" name="LoginTestsBasedOnGroups" enabled="true" >
+  	<groups>
+  		<run>
+  			<inlcude name = "smoke"/>
+  		</run>
+  	</groups>
+  	<classes>
+		<class name="com.yantra.product.parabank.tc.TC_LoginPage"/>
+  	</classes>
+  </test>
+  
+  Test example: 
+  	@Test(groups= {"smoke","regression"})
+	Test 1: public void t_01_validate_parabank_login(String browser_name,String url){
+	
+	@Test(groups= {"regression"})
+	Test 2: public void t_02_negative_enter_correct_user_name_wrong_password(String browser_name,String url) throws IOException {
+	
+ -->
+ 
+ 
+ <!-- TIP 5: Use of Regular expressions
+ 
+ <test name="Test1">
+  <classes>
+    <class name="com.yantra.product.parabank.tc.TC_LoginPage">
+      <methods>
+        <include name=".*login.*"/>
+        <exclude name=".*negative.*"/>
+      </methods>
+     </class>
+  </classes>
+</test>
+
+Test Method 1 will be executed
+Test Method 2 will not be executed
+   Test method example: 
+  	@Test(groups= {"smoke","regression"})
+	Test 1: public void t_01_validate_parabank_login(String browser_name,String url){
+	
+	@Test(groups= {"regression"})
+	Test 2: public void t_02_negative_enter_correct_user_name_wrong_password(String browser_name,String url) throws IOException {
+
+  -->
+  
+  <!-- TIP 6: Parallel Execution
+  
+<suite name="My suite" parallel="methods" thread-count="5">
+<suite name="My suite" parallel="tests" thread-count="5">
+<suite name="My suite" parallel="classes" thread-count="5">
+<suite name="My suite" parallel="instances" thread-count="5">
+  
+   -->

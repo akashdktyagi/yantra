@@ -52,7 +52,9 @@ public class TC_LoginPage {
 		//**********************************************************************************
 		//*************************TC Steps*************************************************
 		//**********************************************************************************
-		loginpage.kw_login_into_parabank("john","demo",true);
+		String username =  CONFIG_DATA.get("USERNAME");
+		String password = CONFIG_DATA.get("PASSWORD");
+		loginpage.kw_login_into_parabank(username,password,true);
 
 	}
 	
