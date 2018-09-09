@@ -31,10 +31,20 @@ public class Frames_and_actions {
 
 	public static void main(String[] args) throws Exception {
 
+		
 		System.setProperty("webdriver.chrome.driver","F:\\VisionIT\\dependancy\\chromedriver_win32\\chromedriver.exe");
 
 
 		WebDriver driver=new ChromeDriver();
+		List<WebElement> col = driver.findElements(By.xpath("//ol[@id='selectable']/li[contains(text(),'Item 2')]"));
+		List<WebElement> col1 = driver.findElements(By.xpath("//ol[@id='selectable']/li"));
+		
+		for (int i=0;i<col1.size();i++){
+			if (col1.get(i).getText().equalsIgnoreCase("Item 2") ) || (col1.get(i).getText().equalsIgnoreCase("Item 3") ){
+				col1.get(i).click();
+			}
+		}
+		col1.get().click();
 		driver.manage().window().maximize();
 
 		//creating object of action
