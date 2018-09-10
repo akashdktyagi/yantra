@@ -4,7 +4,7 @@ public class Demo {
 
 	public static void main(String[] args)
 	{
-		//output on console
+		//output on console 123
 		System.out.println("Hello World");
 
 	}
