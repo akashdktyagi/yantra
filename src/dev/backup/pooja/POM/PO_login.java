@@ -8,7 +8,8 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import dev.backup.akash.codesnippets.GenericReusables;
+import dev.backup.pooja.reusable.GenericReusable;
+
 
 public class PO_login 
 {
@@ -32,11 +33,11 @@ public void set_username_text_box(String username){
 	wait.until(ExpectedConditions.visibilityOf(txtusername));
 	txtusername.sendKeys(username);
 	
-	GenericReusables.WriteLogs("info","username set with text:" +username);
+	GenericReusable.WriteLogs("info","username set with text:" +username);
 	}
 	catch(NoSuchElementException e)
 	{
-		GenericReusables.WriteLogs("fail","username not set with text:" +username+"Due to Exception"+e.toString());
+		GenericReusable.WriteLogs("fail","username not set with text:" +username+"Due to Exception"+e.toString());
 		e.printStackTrace();
 	}
 	
@@ -49,11 +50,11 @@ public void set_password_text_box(String password){
 	wait.until(ExpectedConditions.visibilityOf(txtpassword));
 	txtpassword.sendKeys(password);
 	
-	GenericReusables.WriteLogs("info","password set with :" +password);
+	GenericReusable.WriteLogs("info","password set with :" +password);
 	}
 	catch(NoSuchElementException e)
 	{
-		GenericReusables.WriteLogs("fail","password is not set with text:" +password+"Due to Exception"+e.toString());
+		GenericReusable.WriteLogs("fail","password is not set with text:" +password+"Due to Exception"+e.toString());
 		e.printStackTrace();
 	}
 	
@@ -67,14 +68,15 @@ public void click_login_button()
 	WebDriverWait wait=new WebDriverWait(driver, 10);
 	wait.until(ExpectedConditions.visibilityOf(btn_login));
 	btn_login.click();
-	GenericReusables.WriteLogs("info","click on log_in button :" +btn_login);
+	GenericReusable.WriteLogs("info","click on log_in button :" +btn_login);
 	}
 	catch(NoSuchElementException e)
 	{
-		GenericReusables.WriteLogs("fail","unabe to click on log_in button:" +btn_login+"Due to Exception"+e.toString());
+		GenericReusable.WriteLogs("fail","unabe to click on log_in button:" +btn_login+"Due to Exception"+e.toString());
 		e.printStackTrace();
 	}
 	
 }
 }
 
+ 
