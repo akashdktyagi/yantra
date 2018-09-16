@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 /**
@@ -22,6 +23,6 @@ public interface IUIManager {
 	public HashMap<Integer,HashMap<Integer,String>> GetUITableText(WebElement _locator);
 	public int[] GetUITableRowClmWithCellText(WebElement _locator, String s_expected_text);
 	public List<WebElement> GetUITableChildItemsWithRowAndClm(WebElement _locator,int row, int clm, By desc);
-
+	public void TakeScreenShot(WebDriver driver,String path);
 	
 }

@@ -1,6 +1,6 @@
 package com.yantra.product.parabank.po;
 
-import org.apache.log4j.Logger;
+import org.testng.log4testng.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
