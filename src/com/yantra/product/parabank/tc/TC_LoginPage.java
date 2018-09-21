@@ -67,7 +67,7 @@ public class TC_LoginPage {
 	 */
 	@Parameters({"browser","url"})
 	@Test(groups= {"regression"})
-	public void t_02_negative_enter_correct_user_name_wrong_password(String browser_name,String url) throws IOException {
+	public void t_02_negative_enter_correct_user_name_wrong_password(@Optional("chrome")String browser_name,String url) throws IOException {
 		try {
 			
 			//**********************************************************************************
@@ -94,7 +94,7 @@ public class TC_LoginPage {
 	
 	@Parameters({"browser","url"})
 	@Test(groups= {"regression"})
-	public void t_03_negative_enter_wrong_user_name_correct_passwor(String browser_name,String url) throws IOException {
+	public void t_03_negative_enter_wrong_user_name_correct_passwor(@Optional("chrome")String browser_name,String url) throws IOException {
 		try {
 			
 			//**********************************************************************************
@@ -117,7 +117,7 @@ public class TC_LoginPage {
 		}}
 	@Parameters({"browser","url"})
 	@Test(groups= {"regression"})
-	public void t_04_negative_enter_wrong_user_name_wrong_password(String browser_name,String url) throws IOException{
+	public void t_04_negative_enter_wrong_user_name_wrong_password(@Optional("chrome")String browser_name,String url) throws IOException{
 		try {
 			
 			//**********************************************************************************

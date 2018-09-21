@@ -32,7 +32,7 @@
   <!-- *************2nd Test Set-Using Fire fox*********************** -->
   <!-- ************************************************ -->
 
-	<test parallel="true" thread-count = "2" name="LoginTests_firefox" enabled="true" >
+	<test parallel="true" thread-count = "2" name="LoginTests_firefox" enabled="false" >
     <parameter name = "browser" value = "firefox"/>
   	<parameter name = "url" value = "http://parabank.parasoft.com"/>
     <classes>

@@ -3,9 +3,11 @@
  */
 package com.yantra.core.interfaces;
 
-import org.apache.log4j.Logger;
+
+
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.log4testng.Logger;
 
 /**
  * @author akashtyagi

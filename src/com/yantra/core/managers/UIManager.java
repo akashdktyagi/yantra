@@ -3,12 +3,16 @@
  */
 package com.yantra.core.managers;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.testng.log4testng.Logger;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.yantra.core.interfaces.ILogAndReport;
@@ -113,8 +117,23 @@ public class UIManager implements IUIManager,ILogAndReport {
 		return null;
 	}
 
+	@Override
+	public void TakeScreenShot(WebDriver driver,String path)  {
+		
+		try {
+			// TODO Auto-generated method stub
+			TakesScreenshot  scrShot = (TakesScreenshot)driver;
+			File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
+			
+			File destFile  = new File(path);
+			FileUtils.copyFile(srcFile, destFile);
+			WriteLogAndReport(logger, "info", "info", "Screen Shot taken at location: " + path);
 
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 
+	}
 
-
-}
+}//end class
