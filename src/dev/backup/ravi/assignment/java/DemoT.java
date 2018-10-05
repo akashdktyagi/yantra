@@ -1,4 +1,4 @@
-package dev.backup.ravi.assignment;
+package dev.backup.ravi.assignment.java;
 
 public class DemoT {
 

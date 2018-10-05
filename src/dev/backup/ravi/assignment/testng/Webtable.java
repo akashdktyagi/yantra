@@ -50,7 +50,7 @@ public class Webtable {
         	String ss=ittd.getText();// iterate values
         	String expval="Reliance Capital";
         	//System.out.println(ss);
-        	if(ittd.getText().equals(expval))
+        	if(ittd.getText().equalsIgnoreCase("Reliance Capital"))
         	{
         		System.out.println(expval);
         	}
