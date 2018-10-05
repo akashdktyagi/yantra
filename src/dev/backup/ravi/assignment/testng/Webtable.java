@@ -47,12 +47,14 @@ public class Webtable {
         
         for (WebElement ittd : total_td1) 
         {
-        	        	String expTd="Reliance Capital";
-        	if(ittd.getText().equals(expTd))
+        	String ss=ittd.getText();// iterate values
+        	String expval="Reliance Capital";
+        	//System.out.println(ss);
+        	if(ittd.getText().equals(expval))
         	{
-        		System.out.println(ittd.click());
+        		System.out.println(expval);
         	}
-			
+        	
 		}
        
         
