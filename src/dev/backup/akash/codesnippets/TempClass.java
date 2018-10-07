@@ -13,7 +13,7 @@ public class TempClass {
 		System.setProperty("webdriver.chrome.driver", 
 				"D:\\VisionITWorkspace\\dependencies\\chromedriver_win32\\chromedriver.exe");
 		
-		//1. Intitilaize the Browser
+		//1. Initialize the Browser
 		WebDriver driver = new ChromeDriver();
 		
 		//2 Navigate
@@ -34,7 +34,7 @@ public class TempClass {
 		String title_expected = "ParaBank | Accounts Overview";
 		String title_actual = driver.getTitle();
 		if (title_expected.equals(title_actual)){
-			System.out.println("Login SUccessfull");
+			System.out.println("Login Successfull");
 		}else {
 			System.out.println("Login Failed");
 		}

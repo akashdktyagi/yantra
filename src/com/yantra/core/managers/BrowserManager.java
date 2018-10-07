@@ -51,19 +51,20 @@ public class BrowserManager{// implements ILogAndReport {
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		//WriteLogAndReport(logger, "info", "pass", "Browser Invoked. Type: " + _sBrowserName );
+		CmnMethods.WriteLog("info","Get Browser");
 		return driver;
 	}//end method
 	
 	public boolean NavigateToPage(WebDriver driver, String url){
-		Reporter.log("Navigating to URL: " + url, true);
+		CmnMethods.WriteLog("info","Navigating to URL: " + url);
 		String oldUrl = driver.getCurrentUrl();
 		driver.navigate().to(url);
 		String newURL = driver.getCurrentUrl();
 		Assert.assertNotEquals(oldUrl, newURL,"oldURL matched with new URL indicating page did not navaigate succesfully.");
 		if (!(oldUrl.equalsIgnoreCase(newURL))){
-			Reporter.log("Step Passed: Navigation to URL Successfull.", true);
+			CmnMethods.WriteLog("pass","Navigation to URL Successfull.");
 		}else {
-			Reporter.log("Step Failed: Navigation to URL Failed. " + url, true);
+			CmnMethods.WriteLog("fail", "Navigation to URL Failed. " + url);
 		}
 		
 		//WriteLogAndReport(logger, "info", "pass", "Navigation to Url successfull : " + url);
