@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
+import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.log4testng.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,9 +21,9 @@ import com.yantra.driver.Config;
  * @author akashtyagi
  *
  */
-public class BrowserManager implements ILogAndReport {
+public class BrowserManager{// implements ILogAndReport {
 	
-	final Logger logger = Logger.getLogger(BrowserManager.class);
+	//final Logger logger = Logger.getLogger(BrowserManager.class);
 
 	public WebDriver GetBrowser(String _sBrowserName) throws IOException{
 		Config config = new Config();
@@ -48,13 +50,23 @@ public class BrowserManager implements ILogAndReport {
 		driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		WriteLogAndReport(logger, "info", "pass", "Browser Invoked. Type: " + _sBrowserName );
+		//WriteLogAndReport(logger, "info", "pass", "Browser Invoked. Type: " + _sBrowserName );
 		return driver;
 	}//end method
 	
 	public boolean NavigateToPage(WebDriver driver, String url){
+		Reporter.log("Navigating to URL: " + url, true);
+		String oldUrl = driver.getCurrentUrl();
 		driver.navigate().to(url);
-		WriteLogAndReport(logger, "info", "pass", "Navigation to Url successfull : " + url);
+		String newURL = driver.getCurrentUrl();
+		Assert.assertNotEquals(oldUrl, newURL,"oldURL matched with new URL indicating page did not navaigate succesfully.");
+		if (!(oldUrl.equalsIgnoreCase(newURL))){
+			Reporter.log("Step Passed: Navigation to URL Successfull.", true);
+		}else {
+			Reporter.log("Step Failed: Navigation to URL Failed. " + url, true);
+		}
+		
+		//WriteLogAndReport(logger, "info", "pass", "Navigation to Url successfull : " + url);
 		return true;
 	}//end method
 	

@@ -6,7 +6,9 @@ package com.yantra.core.managers;
 import java.io.File;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
+import org.testng.Reporter;
 import org.testng.log4testng.Logger;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -118,21 +120,37 @@ public class UIManager implements IUIManager,ILogAndReport {
 	}
 
 	@Override
-	public void TakeScreenShot(WebDriver driver,String path)  {
+	public String TakeScreenShot(WebDriver driver)  {
 		
 		try {
+			//Get the random number for the file
+			Random rand = new Random();
+			long random = (int )(Math.random() * 999999999 + 1000000);
+			String result = Long.toString(random);
+			  
+			String path = System.getProperty("user.dir") + "//" +"ScreenShots";
+			String nameFileName = result + ".png";
+			String filePathName = path + "//" + nameFileName;
+			
+			//to create new folder
+			new File(path).mkdirs();
+
 			// TODO Auto-generated method stub
 			TakesScreenshot  scrShot = (TakesScreenshot)driver;
 			File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
 			
-			File destFile  = new File(path);
+			File destFile  = new File(filePathName);
 			FileUtils.copyFile(srcFile, destFile);
-			WriteLogAndReport(logger, "info", "info", "Screen Shot taken at location: " + path);
+			//WriteLogAndReport(logger, "info", "info", "Screen Shot taken at location: " + path);
+			//Reporter.log("Screen shot taken and kept at path: " + filePathName );
+			return filePathName;
 
 			
 		}catch (Exception e) {
 			e.printStackTrace();
+			return null;
 		}
+	
 
 	}
 

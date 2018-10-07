@@ -23,6 +23,6 @@ public interface IUIManager {
 	public HashMap<Integer,HashMap<Integer,String>> GetUITableText(WebElement _locator);
 	public int[] GetUITableRowClmWithCellText(WebElement _locator, String s_expected_text);
 	public List<WebElement> GetUITableChildItemsWithRowAndClm(WebElement _locator,int row, int clm, By desc);
-	public void TakeScreenShot(WebDriver driver,String path);
+	public String TakeScreenShot(WebDriver driver);
 	
 }

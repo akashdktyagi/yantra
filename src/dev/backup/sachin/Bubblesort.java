@@ -1,4 +1,4 @@
-package dev.backup.sachin.assignment;
+package dev.backup.sachin;
 
 public class Bubblesort 
 {
