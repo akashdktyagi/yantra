@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite  name="Suite">
+	<!-- Suite level parameters are defined here -->
+	<!-- 
+    <parameter name = "browser" value = "chrome"/>
+  	<parameter name = "url" value = "http://parabank.parasoft.com"/>
+  	-->
+
+  <!-- ************************************************ -->
+  <!-- *************1st Test Set*********************** -->
+  <!-- ************************************************ -->
+  <!-- Use parallel attribute and thread-count for parallel execution -->
+  <!-- If enabled is true- test set will be executed -->
+  <test parallel="true" thread-count = "2" name="LoginTests_Chrome" enabled="true" >
+  	<!-- Test Set Level Parameters are defined here -->
+    <parameter name = "browser" value = "chrome"/>
+  	<parameter name = "url" value = "http://parabank.parasoft.com"/>
+    <classes>
+		<class name="com.yantra.product.parabank.tc.TC_LoginPage"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <!-- ************************************************ -->
+  <!-- *************2nd Test Set-Using Fire fox*********************** -->
+  <!-- ************************************************ -->
+
+	<test parallel="true" thread-count = "2" name="LoginTests_firefox" enabled="true" >
+    <parameter name = "browser" value = "firefox"/>
+  	<parameter name = "url" value = "http://parabank.parasoft.com"/>
+    <classes>
+      <class name="com.yantra.product.parabank.tc.TC_LoginPage"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  </suite>
