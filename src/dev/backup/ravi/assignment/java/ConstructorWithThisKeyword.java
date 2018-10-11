@@ -1,10 +1,10 @@
 package dev.backup.ravi.assignment.java;
 
 public class ConstructorWithThisKeyword {
-	//class vars
-	String name;
-	int age;
-	int rollno;
+	//class variables
+           String name;
+	       int age;
+	       int rollno;
 	public ConstructorWithThisKeyword(String name , int age, int rollNo){
 		this.name=name;
 		this.age=age;
@@ -17,7 +17,8 @@ public class ConstructorWithThisKeyword {
 	}
 	
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		ConstructorWithThisKeyword 	obj = new ConstructorWithThisKeyword("Ravi",30,101);
 
 	}
