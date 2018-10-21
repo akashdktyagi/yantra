@@ -21,6 +21,8 @@ public class FramesAndActions {
 		WebDriver driver = new HtmlUnitDriver();//new ChromeDriver();
 		driver.get("https://jqueryui.com/slider/");
 		
+		driver.
+		
 		
 		/*
 		 * Find Iframe in-side document
@@ -32,6 +34,8 @@ public class FramesAndActions {
 		*/
 		//driver.switchTo().frame(0);
 		driver.switchTo().frame(iframe);
+		
+		driver.switchTo().alert()..defaultContent();
 		
 		/*
 		 * This will work as Driver has switched

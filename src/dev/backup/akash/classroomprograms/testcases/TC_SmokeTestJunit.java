@@ -1,10 +1,8 @@
-package testcases;
+package dev.backup.akash.classroomprograms.testcases;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.concurrent.TimeUnit;
 
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,10 +11,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
+
+
+import dev.backup.akash.classroomprograms.pageobjects.PO_CmnPageObjects;
+import dev.backup.akash.classroomprograms.pageobjects.PO_Login;
 import junit.framework.Assert;
-import pageobjects.PO_CmnPageObjects;
-import pageobjects.PO_Login;
-import pageobjects.PO_TransferFunds;
+import dev.backup.akash.classroomprograms.pageobjects.*;
 
 class TC_SmokeTestJunit {
 	WebDriver driver;
@@ -38,7 +38,7 @@ class TC_SmokeTestJunit {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
-		PO_CmnPageObjects = PageFactory.initElements(driver, PO_CmnPageObjects.class);
+		PO_CmnPageObjects = PageFactory.initElements(driver, dev.backup.akash.classroomprograms.pageobjects.PO_CmnPageObjects.class);
 		PO_TransferFunds = PageFactory.initElements(driver, PO_TransferFunds.class);
 		
 		System.out.println("BeforeEach");

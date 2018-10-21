@@ -1,4 +1,6 @@
-package pageobjects;
+package dev.backup.akash.classroomprograms.pageobjects;
+
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

@@ -1,4 +1,6 @@
-package testcases;
+package dev.backup.akash.classroomprograms.testcases;
+
+
 
 import java.util.concurrent.TimeUnit;
 
@@ -6,7 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import pageobjects.PO_Login;
+import dev.backup.akash.classroomprograms.pageobjects.PO_Login;
+
+
 
 public class TC_SmokeTest {
 
