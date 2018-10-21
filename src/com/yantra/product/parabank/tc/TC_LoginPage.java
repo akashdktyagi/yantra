@@ -48,6 +48,9 @@ public class TC_LoginPage {
 		oBrowserManager.NavigateToPage(driver, url);
 		
 		PO_LoginPage loginpage=PageFactory.initElements(driver,PO_LoginPage.class);
+		loginpage.SetUsername("john");
+		loginpage.SetPassword("demo");
+		loginpage.ClickSubmit();
 		
 		//**********************************************************************************
 		//*************************TC Steps*************************************************

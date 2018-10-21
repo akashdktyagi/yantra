@@ -36,6 +36,8 @@ public class TC_SmokeTest {
 		  //Sign in to the CS Cart
 		  PO_MyAccount.SignInToCSCart();
 		  
+
+		  
 	 }catch(Exception e) {
 		 CmnMethods.WriteLog("fail", "Test Failed.");
 		 Assert.fail("TC failed due to exception", e);

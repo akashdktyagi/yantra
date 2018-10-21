@@ -53,7 +53,10 @@ public class PO_MyAccount {
 		boolean expected = true;
 		Assert.assertEquals(actual,expected,
 				"Pop Up did not Open after clicking on My Account Ticker");
-		CmnMethods.WriteLog("info"," My Account Pop Up is displayed.");	
+		CmnMethods.WriteLog("pass"," My Account Pop Up is displayed.");
+		String filepath = oUIManager.TakeScreenShot(driver);
+		CmnMethods.WriteLog("pass", "<a href='" + filepath + "'> Click Here for Screen shot</a>");
+
 	}
 	
 	

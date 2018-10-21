@@ -13,13 +13,13 @@ import org.testng.Assert;
 import com.yantra.core.interfaces.ILogAndReport;
 import com.yantra.core.managers.BrowserManager;
 
-public class PO_LoginPage implements ILogAndReport{
+public class PO_LoginPage{ //implements ILogAndReport{
 	
-	final Logger logger = Logger.getLogger(BrowserManager.class);
+	//final Logger logger = Logger.getLogger(BrowserManager.class);
 	
 	 WebDriver driver;
-	 
-	 @FindBy(how=How.XPATH,using="//input[@name='username']")
+	 //WebElement o_username = driver.findElement(By.name("username"));
+	 @FindBy(how=How.NAME,using="username") 
 	 private WebElement txtbx_username;
 
 	 @FindBy(how=How.XPATH,using="//input[@name='password']")
@@ -38,16 +38,16 @@ public class PO_LoginPage implements ILogAndReport{
 	 //**********************Locators Header and Setters*************************
 	 //**************************************************************************
 	
-	 private void SetUsername(String Username) {
+	 public void SetUsername(String Username) {
 		try {
 			txtbx_username.sendKeys(Username);
-			 WriteLogAndReport(logger, "info", "pass", "User name is set with user: "  + Username);	
+			// WriteLogAndReport(logger, "info", "pass", "User name is set with user: "  + Username);	
 		}catch(Exception e) {
-			 WriteLogAndReport(logger, "warn", "fail", "Unable to set user name due to exception " + e.getMessage());
+			// WriteLogAndReport(logger, "warn", "fail", "Unable to set user name due to exception " + e.getMessage());
 		}
 
 	 }
-	 private void SetPassword(String password) {
+	 public void SetPassword(String password) {
 		 try {
 			 txtbx_password.sendKeys(password);
 			 WriteLogAndReport(logger, "info", "pass", "User name is set with user: "  + password);
@@ -57,7 +57,7 @@ public class PO_LoginPage implements ILogAndReport{
 
 
 	 }
-	 private void ClickSubmit() {
+	 public void ClickSubmit() {
 		 try {
 			 btn_Login.click();
 			 WriteLogAndReport(logger, "info", "pass", "Clicked on Login button");
