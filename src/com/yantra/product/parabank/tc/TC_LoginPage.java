@@ -38,7 +38,7 @@ public class TC_LoginPage {
 	 */
 	@Parameters({"browser","url"})
 	@Test(groups= {"smoke","regression"})
-	public void t_01_validate_parabank_login(@Optional("chrome") String browser_name,String url) throws IOException{
+	public void t_01_validate_parabank_login(@Optional("chrome") String browser_name,@Optional("http://parabank.parasoft.com")String url) throws IOException{
 		
 		//**********************************************************************************
 		//*************************Intialization********************************************

@@ -3,14 +3,16 @@
  */
 package com.yantra.core.managers;
 
+
 import java.io.File;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
 
 import org.testng.log4testng.Logger;
-import org.apache.commons.io.FileUtils;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -145,7 +147,7 @@ public class UIManager implements IUIManager,ILogAndReport {
 			File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
 			
 			File destFile  = new File(filePathName);
-			FileUtils.copyFile(srcFile, destFile);
+			Files.copy(srcFile.toPath(), destFile.toPath());
 			//WriteLogAndReport(logger, "info", "info", "Screen Shot taken at location: " + path);
 			//Reporter.log("Screen shot taken and kept at path: " + filePathName );
 			return filePathName;

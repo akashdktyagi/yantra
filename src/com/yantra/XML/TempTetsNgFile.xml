@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<suite  name="Suite">
+<suite  name="Suite" parallel = "classes" thread-count = "2">
 	<!-- Suite level parameters are defined here -->
 	<!-- 
     <parameter name = "browser" value = "chrome"/>
