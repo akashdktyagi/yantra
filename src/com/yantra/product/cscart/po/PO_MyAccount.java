@@ -15,11 +15,16 @@ import org.testng.asserts.SoftAssert;
 
 import com.yantra.core.managers.CmnMethods;
 import com.yantra.core.managers.UIManager;
+import com.yantra.driver.ExtentReportBase;
 
-public class PO_MyAccount {
+public class PO_MyAccount extends ExtentReportBase{
 
+	
 	WebDriver driver;
+	ExtentReportBase ExtentReportBase = new ExtentReportBase();
+	
 	UIManager oUIManager = new UIManager();
+	
 	@FindBy(how = How.XPATH,using="//*[@class = 'ty-icon-down-micro ty-account-info__user-arrow']")
 	WebElement ticker_my_account_arrow;
 	
@@ -45,9 +50,17 @@ public class PO_MyAccount {
 	public PO_MyAccount(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(this.driver, this);
+		
+
 	}
 	
+	public void LoginInToApp() {
+		ClickOnMyAccountTicker();
+		SignInToCSCart();
+		
+	}
 	public void ClickOnMyAccountTicker() {
+		Reporter.log("trying to click on account ticket", true);
 		oUIManager.ClickElement(ticker_my_account_arrow);
 		boolean actual = txt_container_account_info_pop_up.isDisplayed();
 		boolean expected = true;
@@ -56,6 +69,9 @@ public class PO_MyAccount {
 		CmnMethods.WriteLog("pass"," My Account Pop Up is displayed.");
 		String filepath = oUIManager.TakeScreenShot(driver);
 		CmnMethods.WriteLog("pass", "<a href='" + filepath + "'> Click Here for Screen shot</a>");
+		
+		ExtentReportBase.
+		
 
 	}
 	

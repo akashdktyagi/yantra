@@ -14,7 +14,7 @@ import com.yantra.product.parabank.po.PO_OpenNewAccount;
 
 public class TC_OpenNewAccount {
 
-
+	
 	/*
 	 * @author: Sneha
 	 * Date: 7July2018

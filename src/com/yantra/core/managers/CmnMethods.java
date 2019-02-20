@@ -16,7 +16,7 @@ public class CmnMethods {
 		Timestamp ts = new Timestamp(time);
 
 		msg = "--" + ts + " " + logType+ " " + callerMethodName + " " + msg + "<br>" + "<br>";
-		Reporter.log(msg);
+		Reporter.log(msg,true);
 	 	
 		
 		//Taking Screen shot and attaching it to the Test NG report

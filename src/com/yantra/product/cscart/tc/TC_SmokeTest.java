@@ -14,6 +14,7 @@ import org.testng.annotations.DataProvider;
 import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
@@ -21,8 +22,8 @@ import org.testng.annotations.AfterClass;
 public class TC_SmokeTest {
 	
  @Test(groups="smoke",description="Smoke Test For Login",enabled=false)
-  public void t_cs_cart_smoke_test_1_login() throws IOException {
-	 try {
+  public void t_cs_cart_smoke_test_1_login() {
+	try {
 
 		  BrowserManager oBrowserManager = new BrowserManager();
 		  WebDriver driver = oBrowserManager.GetBrowser("chrome");
@@ -31,12 +32,17 @@ public class TC_SmokeTest {
 		  oBrowserManager.NavigateToPage(driver, "https://demo.cs-cart.com"); 
 		  PO_MyAccount PO_MyAccount = new PO_MyAccount(driver);
 		  
+		  PO_MyAccount.LoginInToApp();
 		  //Click on My Account Ticker
-		  PO_MyAccount.ClickOnMyAccountTicker();
+		 // PO_MyAccount.ClickOnMyAccountTicker();
 		  
 		  //Sign in to the CS Cart
-		  PO_MyAccount.SignInToCSCart();
+		  //'PO_MyAccount.SignInToCSCart();
 		  
+		  WebDriverWait wait = new WebDriverWait(driver, 20);
+		  //wait.until(ExpectedConditions)
+
+
 
 		  
 	 }catch(Exception e) {
@@ -47,7 +53,7 @@ public class TC_SmokeTest {
   
   }//end method
   
- @Test(dataProvider="SearchItem",groups="smoke",description="Smoke Test For Search funtionality")
+ @Test(dataProvider="SearchItem",groups="sanity",description="Smoke Test For Search funtionality")
  public void t_cs_cart_smoke_test_search_multiple_products(String product) throws IOException {
 	 
 	 System.out.println(product);
@@ -72,7 +78,7 @@ public class TC_SmokeTest {
  public Object[][] ProductsSearchItems() throws Exception{
 	 
 	 String[][] products = new String[3][1];
-	 String[][] products_poi = null;
+	String[][] products_poi = null;
 	 
 	 products[0][0] = "Computer";
 	 products[1][0] = "Laptop";
@@ -81,8 +87,8 @@ public class TC_SmokeTest {
 	 //Use Poi to etract data
 	 products_poi = ExcelManager.getTableArray("E:\\_AkashStuff\\Automation\\EclipseWorkspace\\yantra\\data\\cscart\\CSCartProducts.xlsx", "Sheet1");
 	 
-	 //return products;
-	 return products_poi;
+	 return products;
+	// return products_poi;
 	 
 	 //using Poi
  }

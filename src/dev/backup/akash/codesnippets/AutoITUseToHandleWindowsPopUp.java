@@ -15,7 +15,7 @@ public class AutoITUseToHandleWindowsPopUp {
 	public static void main(String[] args) throws IOException {
 
 		System.setProperty("webdriver.chrome.driver", 
-				"D:\\VisionITWorkspace\\dependencies\\chromedriver_win32\\chromedriver.exe");
+				"E:\\_AkashStuff\\Automation\\dependencies\\chromedriver\\chromedriver.exe");
 		
 		//1 Create Driver object
 		WebDriver driver = new ChromeDriver();
@@ -48,11 +48,11 @@ public class AutoITUseToHandleWindowsPopUp {
 		
 		//A Window pop Up will be invoked which could not be handled using Selenium
 		//Auto It script need to be invoked in such cases
-		String fileUploadPath = "D:\\VisionITWorkspace\\dependencies\\FileUpload.txt";
+		String fileUploadPath = "E:\\_AkashStuff\\Automation\\dependencies\\autoItFileUpload\\FileUpload.xlsx";
 		
 		//Exe file has been paramaterized to accept file name at run time
 		//Note the space after exe and file name
-		Runtime.getRuntime().exec("D:\\VisionITWorkspace\\dependencies\\AutoITW3SchoolFileUploadPopUp.exe " + fileUploadPath );
+		Runtime.getRuntime().exec("E:\\_AkashStuff\\Automation\\dependencies\\autoItFileUpload\\autoITFileUpload.exe " + fileUploadPath );
 		
 		/*
 		 * Tips on How to pass command line parameters to auto it script

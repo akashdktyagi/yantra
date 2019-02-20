@@ -55,6 +55,7 @@ public class BrowserManager{// implements ILogAndReport {
 		return driver;
 	}//end method
 	
+
 	public boolean NavigateToPage(WebDriver driver, String url){
 		CmnMethods.WriteLog("info","Navigating to URL: " + url);
 		String oldUrl = driver.getCurrentUrl();

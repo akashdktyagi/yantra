@@ -51,6 +51,7 @@ public class TC_LoginPage {
 		loginpage.SetUsername("john");
 		loginpage.SetPassword("demo");
 		loginpage.ClickSubmit();
+		loginpage.kw_login_into_parabank("john","demo",true);
 		
 		//**********************************************************************************
 		//*************************TC Steps*************************************************

@@ -2,7 +2,8 @@
 <suite parallel="false" name="Suite">
   <test name="Test">
     <classes>
-      <class name="dev.backup.akash.fw2.tc.TC_HomePage"/>
+      <class name="newpck.NewTest"/>
+      <class name="newpck.NewTest2"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

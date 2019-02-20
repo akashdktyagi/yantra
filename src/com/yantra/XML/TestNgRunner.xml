@@ -12,7 +12,8 @@
   <!-- ************************************************ -->
   <!-- Use parallel attribute and thread-count for parallel execution -->
   <!-- If enabled is true- test set will be executed -->
-  <test parallel="true" thread-count = "2" name="LoginTests_Chrome" enabled="true" >
+  <test parallel="method" thread-count
+   = "2" name="LoginTests_Chrome" enabled="true" >
   	<!-- Test Set Level Parameters are defined here -->
     <parameter name = "browser" value = "chrome"/>
   	<parameter name = "url" value = "http://parabank.parasoft.com"/>
@@ -47,7 +48,7 @@
   <test parallel="true" thread-count = "2" name="LoginTestsBasedOnGroups" enabled="true" >
   	<groups>
   		<run>
-  			<inlcude name = "smoke"/>
+  			<inlcude name = "reg.*"/>
   		</run>
   	</groups>
   	<classes>

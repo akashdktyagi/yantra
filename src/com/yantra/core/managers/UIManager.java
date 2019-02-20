@@ -95,7 +95,7 @@ public class UIManager implements IUIManager,ILogAndReport {
 		
 		HashMap<Integer, HashMap<Integer, String>> result_map= new HashMap<Integer,HashMap<Integer,String>>();
 		HashMap<Integer, String> o_col_map=null;;
-		
+	
 		for (int i=0;i<i_row_count;i++) {
 			o_col_clms = o_col_rows.get(i).findElements(By.tagName("td"));
 			i_clm_count = o_col_clms.size();
@@ -107,7 +107,7 @@ public class UIManager implements IUIManager,ILogAndReport {
 			result_map.put(i, o_col_map);
 		}
 		return result_map;
-		
+
 		
 		
 	}//end method

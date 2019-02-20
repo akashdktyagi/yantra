@@ -50,9 +50,9 @@ public class PO_LoginPage{ //implements ILogAndReport{
 	 public void SetPassword(String password) {
 		 try {
 			 txtbx_password.sendKeys(password);
-			 WriteLogAndReport(logger, "info", "pass", "User name is set with user: "  + password);
+			// WriteLogAndReport(logger, "info", "pass", "User name is set with user: "  + password);
 		 }catch(Exception e) {
-			 WriteLogAndReport(logger, "warn", "fail", "Unable to set password due to exception " + e.getMessage()); 
+			//WriteLogAndReport(logger, "warn", "fail", "Unable to set password due to exception " + e.getMessage()); 
 		 }
 
 
@@ -60,9 +60,9 @@ public class PO_LoginPage{ //implements ILogAndReport{
 	 public void ClickSubmit() {
 		 try {
 			 btn_Login.click();
-			 WriteLogAndReport(logger, "info", "pass", "Clicked on Login button");
+			// WriteLogAndReport(logger, "info", "pass", "Clicked on Login button");
 		 }catch(Exception e) {
-			 WriteLogAndReport(logger, "info", "fail", "Unable to click on Submit due to exception " + e.getMessage());
+			// WriteLogAndReport(logger, "info", "fail", "Unable to click on Submit due to exception " + e.getMessage());
 		 }
 
 
@@ -76,12 +76,15 @@ public class PO_LoginPage{ //implements ILogAndReport{
 			 SetUsername(u);
 			 SetPassword(p);
 			 ClickSubmit();
-			 kw_validate_login(isSupposedToBeSuccess);
+			 if (isSupposedToBeSuccess) {
+				 kw_validate_login(isSupposedToBeSuccess);
+			 }
+			
 			 
 			 
 	 
 		 }catch(Exception e) {
-			 WriteLogAndReport(logger, "info", "fail", "Unable to login in to the applicaiton due to exception " + e.getMessage());
+			// WriteLogAndReport(logger, "info", "fail", "Unable to login in to the applicaiton due to exception " + e.getMessage());
 		 }
 	 }
 	
